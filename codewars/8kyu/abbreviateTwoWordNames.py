@@ -1,6 +1,9 @@
 def abbrev_name(name):
-    return
-
+    # arr = name.split()
+    # return f'{arr[0][0].upper()}.{arr[1][0].upper()}'
+    # return '.'.join(w[0] for w in name.split()).upper()
+    for w in name.split():
+        return (w[0], name.split())
 # Write a function to convert a name into initials. This kata strictly takes two words with one space in between them.
 #
 # The output should be two capital letters with a dot separating them.
@@ -11,8 +14,7 @@ def abbrev_name(name):
 #
 # patrick feeney => P.F
 
-# todo split name input by the space to an array
-# todo capitalize each word
-# todo take first letter of each word and return a string with period between
+print(abbrev_name("Sam Harris"))
+
 
 

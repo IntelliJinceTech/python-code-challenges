@@ -39,3 +39,42 @@ def banker_withdraw(f0, p, n, i, c0):
 
 print(banker_withdraw(100000, 1, 12, 1.1, ))
 
+
+# def fortune(f0, p, c0, n, i):
+#     # f0 = starting money in bank account
+#     # p = interest rate
+#     # needs to be / 100
+#     # interest needs to be calculated from interest rate * balance
+#     # interest would be added back onto f0
+#     # c0  = withdraw amount
+#     # n = years
+#     # i = inflation
+#
+#     #
+#
+#     balance = f0
+#
+#     for year in range(1, n):
+#         living_expenses = int(c0 * (1 + (i / 100) ** (year - 1)))
+#         balance -= living_expenses
+#
+#         interest = int(balance * p / 100)
+#         balance += interest
+#
+#     return True if balance >= 0 else False
+#
+#
+# #         balance -= c0
+#
+# print(fortune(100000, 1, 9185, 12, 1), False)
+
+
+def fortune(money, interest, withdraw, years, inflation):
+    interest = 1 + (interest / 100)
+    inflation = 1 + (inflation / 100)
+    for _ in range(years - 1):
+        money = int(money * interest - withdraw)
+        if money < 0:
+            return False
+        withdraw *= inflation
+    return True

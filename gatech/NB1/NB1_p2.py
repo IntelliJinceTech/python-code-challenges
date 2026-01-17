@@ -50,10 +50,6 @@ for row in data_rows:
 
     main_dict[record_id].append(details)
 
-import json
-
-print(json.dumps(main_dict, indent=2))
-
 
 def build_grade_dicts(grades:list) -> dict:
     result = {}
@@ -66,13 +62,10 @@ def build_grade_dicts(grades:list) -> dict:
         exam_grades = {}
         for ind in range(1,len(row)):
             header_name = headers[ind] # e.g. exam 1 label
-            grade_value = row[ind] # e.g. exam 1 grade
-            exam_grades[header_name] = grade_value
-
-
-
-
-
+            grade_value = int(row[ind]) # e.g. exam 1 grade
+            exam_grades[header_name] = grade_value # creating key, value pair for each label and grade
+        result[student_name] = exam_grades # combining student(key) and the nested grades(value) together
+    return result
 
 grades = [
 # First line is descriptive header. Subsequent lines hold data

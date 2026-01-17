@@ -63,4 +63,16 @@ def decompress_vector_test(d: dict, n: int = None) -> list:
 d = {'inds': [0, 3, 7, 3, 3, 5, 1],
      'vals': [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0]
      }
-print(f'result={decompress_vector_test(d)}')
+# print(f'result={decompress_vector_test(d)}')
+
+# exercise 4
+
+def find_common_inds_test(d1:dict, d2:dict) -> list:
+    intersection = set(d1['inds']) & set(d2['inds'])
+    sorted_intersection = sorted(intersection)
+    return sorted_intersection
+
+### Demo function call
+d1 = {'inds': [9, 9, 1, 9, 8, 1], 'vals': [0.28, 0.84, 0.71, 0.03, 0.04, 0.75]}
+d2 = {'inds': [0, 9, 9, 1, 3, 3, 9], 'vals': [0.26, 0.06, 0.46, 0.58, 0.42, 0.21, 0.53, 0.76]}
+print(f'result={find_common_inds_test(d1, d2)}')

@@ -37,7 +37,7 @@ def banker_withdraw(f0, p, n, i, c0):
         # balance is added so that we have the balance for the start of the next year
     return balance
 
-print(banker_withdraw(100000, 1, 12, 1.1, ))
+print(banker_withdraw(100000, 1, 12, 1.1, 1000 ))
 
 
 # def fortune(f0, p, c0, n, i):
